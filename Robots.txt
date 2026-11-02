@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tumi87.github.io/Fairyland-Cake-Co-part-2/sitemap.xml

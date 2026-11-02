@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order a Custom Cake | Fairyland Cake Co.</title>
+<meta name="description" content="Start your custom cake order with Fairyland Cake Co. Choose flavour, size, date and dietary needs and get an instant estimated cost and availability.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="logo">
+    <span class="logo-circle"></span>
+    <span class="logo-text">Fairyland <em>Cake Co.</em></span>
+  </a>
+
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="menu.html">Menu</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="enquiry.html">Enquiry</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+</header>
+
+<section class="banner" data-img="slide3"><h1>Start Your Order</h1></section>
+
+<main>
+<form id="orderForm" data-validate action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+ <div><label for="fullname">Full Name</label><input id="fullname" name="fullname" data-rule="name" autocomplete="name" required minlength="2" maxlength="60"><span class="err"></span></div>
+ <div><label for="email">Email</label><input id="email" type="email" name="email" data-rule="email" autocomplete="email" required maxlength="80"><span class="err"></span></div>
+ <div><label for="phone">Phone Number</label><input id="phone" type="tel" name="phone" data-rule="phone" placeholder="0821234567" autocomplete="tel" required pattern="(\+27|0)[0-9 ]{9,12}" maxlength="16"><span class="err"></span></div>
+ <div><label for="flavour">Preferred Flavour</label><select id="flavour" name="flavour" data-rule="select" required><option value="">-- Select --</option><option>Vanilla</option><option>Chocolate</option><option>Red Velvet</option><option>Lemon &amp; Berry</option><option>Caramel</option></select><span class="err"></span></div>
+ <div><label for="size">Cake Size</label><select id="size" name="size" data-rule="select" required><option value="">-- Select --</option><option value="Small">Small (8–10 servings)</option><option value="Medium">Medium (15–20 servings)</option><option value="Large">Large (25–30 servings)</option><option value="Tiered">Tiered (40+ servings)</option></select><span class="err"></span></div>
+ <div><label for="date">Event Date</label><input id="date" type="date" name="date" data-rule="date" required><span class="err"></span></div>
+ <div><label for="diet">Dietary Requirements</label><select id="diet" name="diet" data-rule="select" required><option value="">-- Select --</option><option>None</option><option>Eggless</option><option>Gluten-free</option></select><span class="err"></span></div>
+ <div><label for="theme">Theme / Design Details</label><textarea id="theme" name="theme" rows="3" maxlength="500" placeholder="Colours, theme, message on the cake..."></textarea></div>
+ <button class="btn rose" type="submit">Submit Order Enquiry</button>
+</form>
+<div class="result" id="result" aria-live="polite"></div>
+</main>
+
+<footer>
+ <div class="fcols">
+  <div><h4>QUICK LINKS</h4><a href="menu.html">Menu &amp; Pricing</a><a href="gallery.html">Gallery</a><a href="about.html">About Us</a></div>
+  <div><h4>ORDER</h4><a href="enquiry.html">Start Your Order</a><a href="contact.html">Pickup &amp; Market</a></div>
+  <div><h4>FOLLOW US</h4><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a><a href="https://wa.me/27000000000" target="_blank" rel="noopener">WhatsApp</a></div>
+  <div><h4>CONTACT US</h4><a href="mailto:hello@fairylandcakeco.co.za">hello@fairylandcakeco.co.za</a></div>
+ </div>
+ <p class="ftag">#MakeYourMomentsMagical · &copy; 2026 Fairyland Cake Co.</p>
+</footer>
+<script src="js/main.js" defer></script>
+</body>
+</html>

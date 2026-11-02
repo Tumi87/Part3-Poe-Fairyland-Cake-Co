@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cake Gallery & Photo Wall | Fairyland Cake Co.</title>
+<meta name="description" content="Photo wall of Fairyland Cake Co. birthday cakes, wedding cakes, baby shower cakes and cupcakes. Tap any photo to enlarge it, then leave a review.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+    <a href="index.html" class="logo">
+      <span class="logo-circle"></span>
+      <span class="logo-text">Fairyland <em>Cake Co.</em></span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="enquiry.html">Enquiry</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+<section class="page-hero">
+   <h1>Get in touch</h1>
+  <p class="hero-sub">Questions, feedback or collaborations? Send us a message.</p>
+</section>
+<section class="banner" data-img="slide2"><h1>Photo Wall</h1></section>
+
+<main>
+ <div class="chips" id="gcats"></div>
+ <div class="grid" id="galleryGrid"></div>
+
+ <h2 class="t">Leave a Review</h2>
+ <form id="reviewForm" data-validate novalidate>
+  <div><label for="rname">Your Name</label><input id="rname" name="rname" data-rule="name" required minlength="2" maxlength="60"><span class="err"></span></div>
+  <div><label for="rating">Rating</label><select id="rating" name="rating" data-rule="select" required><option value="">-- Select --</option><option value="5">5 – Loved it</option><option value="4">4</option><option value="3">3</option><option value="2">2</option><option value="1">1</option></select><span class="err"></span></div>
+  <div><label for="rtext">Your Review</label><textarea id="rtext" name="rtext" rows="3" data-rule="message" required minlength="10" maxlength="300"></textarea><span class="err"></span></div>
+  <button class="btn rose" type="submit">Post Review</button>
+ </form>
+ <h2 class="t">What Customers Say</h2>
+ <div id="reviewList"></div>
+</main>
+
+<footer>
+ <div class="fcols">
+  <div><h4>QUICK LINKS</h4><a href="menu.html">Menu &amp; Pricing</a><a href="gallery.html">Gallery</a><a href="about.html">About Us</a></div>
+  <div><h4>ORDER</h4><a href="enquiry.html">Start Your Order</a><a href="contact.html">Pickup &amp; Market</a></div>
+  <div><h4>FOLLOW US</h4><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a><a href="https://wa.me/27000000000" target="_blank" rel="noopener">WhatsApp</a></div>
+  <div><h4>CONTACT US</h4><a href="mailto:hello@fairylandcakeco.co.za">hello@fairylandcakeco.co.za</a></div>
+ </div>
+ <p class="ftag">#MakeYourMomentsMagical · &copy; 2026 Fairyland Cake Co.</p>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer"><div class="box">
+ <button class="lb-btn" id="lbClose" aria-label="Close">&times;</button>
+ <button class="lb-btn" id="lbPrev" aria-label="Previous">‹</button>
+ <button class="lb-btn" id="lbNext" aria-label="Next">›</button>
+ <div id="lbBig"></div>
+ <div class="txt"><h3 id="lbTitle"></h3><p id="lbDesc"></p></div>
+</div></div>
+<script src="js/main.js" defer></script>
+</body>
+</html>

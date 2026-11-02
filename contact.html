@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact & Pickup | Fairyland Cake Co.</title>
+<meta name="description" content="Contact Fairyland Cake Co., find our pickup location and weekend market stall on the map, or message us on WhatsApp or email.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+
+<header class="site-header">
+  <a href="index.html" class="logo">
+    <span class="logo-circle"></span>
+    <span class="logo-text">Fairyland <em>Cake Co.</em></span>
+  </a>
+
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="menu.html">Menu</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="enquiry.html">Enquiry</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+</header>
+
+  <li><a class="active" href="contact.html">Contact</a></li>
+ </ul></nav>
+</header>
+
+<section class="banner" data-img="hero"><h1>Contact Us</h1></section>
+
+<main>
+<form id="contactForm" action="mailto:hello@fairylandcakeco.co.za" method="post" enctype="text/plain" data-validate novalidate>
+ <div><label for="fullname">Full Name</label><input id="fullname" name="fullname" data-rule="name" required minlength="2" maxlength="60"><span class="err"></span></div>
+ <div><label for="email">Email</label><input id="email" type="email" name="email" data-rule="email" required maxlength="80"><span class="err"></span></div>
+ <div><label for="phone">Phone</label><input id="phone" type="tel" name="phone" data-rule="phone" placeholder="0821234567" required pattern="(\+27|0)[0-9 ]{9,12}" maxlength="16"><span class="err"></span></div>
+ <div><label for="msgType">Message Type</label><select id="msgType" name="msgType" data-rule="select" required><option value="">-- Select --</option><option>General Question</option><option>Feedback</option><option>Complaint</option><option>Compliment</option></select><span class="err"></span></div>
+ <div><label for="message">Message</label><textarea id="message" name="message" rows="5" data-rule="message" required minlength="10" maxlength="500"></textarea><span class="err"></span></div>
+ <button class="btn rose" type="submit">Prepare Email</button>
+</form>
+<div class="result" id="result" aria-live="polite"></div>
+<p style="text-align:center"><a class="btn wa" href="https://wa.me/27000000000" target="_blank" rel="noopener">Chat on WhatsApp</a></p>
+
+<div class="cols">
+ <div><h2 class="t">Pickup Location</h2><p>Mon–Sat 8:00–17:00 (by arrangement)</p><div class="map" id="mapPickup"></div></div>
+ <div><h2 class="t">Weekend Market</h2><p>Saturdays 8:00–14:00</p><div class="map" id="mapMarket"></div></div>
+</div>
+</main>
+
+<footer>
+ <div class="fcols">
+  <div><h4>QUICK LINKS</h4><a href="menu.html">Menu &amp; Pricing</a><a href="gallery.html">Gallery</a><a href="about.html">About Us</a></div>
+  <div><h4>ORDER</h4><a href="enquiry.html">Start Your Order</a><a href="contact.html">Pickup &amp; Market</a></div>
+  <div><h4>FOLLOW US</h4><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a><a href="https://wa.me/27000000000" target="_blank" rel="noopener">WhatsApp</a></div>
+  <div><h4>CONTACT US</h4><a href="mailto:hello@fairylandcakeco.co.za">hello@fairylandcakeco.co.za</a></div>
+ </div>
+ <p class="ftag">#MakeYourMomentsMagical · &copy; 2026 Fairyland Cake Co.</p>
+</footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
