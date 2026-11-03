@@ -5,31 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cake Gallery & Photo Wall | Fairyland Cake Co.</title>
 <meta name="description" content="Photo wall of Fairyland Cake Co. birthday cakes, wedding cakes, baby shower cakes and cupcakes. Tap any photo to enlarge it, then leave a review.">
+<meta name="keywords" content="cake gallery, birthday cake photos, wedding cake photos, baby shower cakes, cupcake photos, cake reviews">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%23e8a46a%27/%3E%3C/svg%3E">
 </head>
 <body>
 <header class="site-header">
     <a href="index.html" class="logo">
-      <span class="logo-circle"></span>
+      <span class="logo-circle" aria-hidden="true"></span>
       <span class="logo-text">Fairyland <em>Cake Co.</em></span>
     </a>
-
-    <nav class="main-nav">
+    <button id="menuBtn" type="button" aria-label="Toggle menu" aria-controls="navMenu" aria-expanded="false">&#9776;</button>
+    <nav class="main-nav" id="navMenu" aria-label="Main">
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
       <a href="menu.html">Menu</a>
-      <a href="gallery.html" class="active">Gallery</a>
+      <a href="gallery.html" class="active" aria-current="page">Gallery</a>
       <a href="enquiry.html">Enquiry</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-<section class="page-hero">
-   <h1>Get in touch</h1>
-  <p class="hero-sub">Questions, feedback or collaborations? Send us a message.</p>
-</section>
 <section class="banner" data-img="slide2"><h1>Photo Wall</h1></section>
 
 <main>

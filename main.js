@@ -2,39 +2,39 @@ const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const slug=s=>s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
 
-const DIR='Images/'; /* must match your photo folder name EXACTLY (GitHub Pages is case-sensitive) */
+const DIR='images/'; /* must match the photo folder name EXACTLY (GitHub Pages is case-sensitive) */
 /* ====== YOUR PHOTOS (file names inside the images folder) ====== */
-const PHOTOS={hero:'cake1.jpg',slide2:'Wedding Cake.jpg.jpeg',slide3:'Pinata Birthday Cake.jpeg',about1:'baking.jpg',about2:'store.jpeg'};
+const PHOTOS={hero:'cake1.jpg',slide2:'wedding-cake.jpg',slide3:'pinata-birthday-cake.jpg',about1:'baking.jpg',about2:'store.jpg'};
 
 /* ====== MENU DATA ====== */
 const menu=[
-{n:"Pinata Birthday Cake", img:"Pinata Birthday Cake.jpeg", cat:"Birthdays",p:520,a:"#fff3d6",b:"#fff",c:"#e63946",d:'sprinkle',x:["Eggless"],t:"Sprinkle sponge filled with sweets."},
-{n:"Rainbow Cake",img:"RAINBOW_CAKE.jpg",cat:"Birthdays",p:480,a:"#ef476f",b:"#ffd166",c:"#06d6a0",d:'sprinkle',x:[],t:"Colourful layers with vanilla cream."},
-{n:"Southern Red Velvet",img:"Southern-Red-Velvet.jpg",cat:"Birthdays",p:420,a:"#a4161a",b:"#fff",c:"#c9184a",d:'berry',x:["Eggless"],t:"Red velvet layers with cream cheese frosting."},
-{n:"Custom Birthday Cake",img:"Custom Birthday Cake.jpg",cat:"Birthdays",p:450,a:"#f4c2c2",b:"#fff5f5",c:"#c9184a",d:'berry',x:["Eggless","Gluten-free"],t:"Fully tailored design, 8–10 servings."},
-{n:"Mini Heart Cake",img:"Mini Heart Cake.jpeg", cat:"Birthdays",p:180,a:"#f7a8b8",b:"#fff",c:"#c9184a",d:'heart',x:[],t:"Vintage-piped heart, serves 2–4."},
-{n:"Floral Buttercream Cake",img:"Floral Buttercream Cake.jpg",cat:"Weddings",p:650,a:"#fff6e5",b:"#fff",c:"#c9184a",d:'flower',x:["Eggless"],t:"Vanilla layers with piped flowers."},
-{n:"Two-Tier Wedding Cake",img:"Two-Tier Wedding Cake.jpg",cat:"Weddings",p:1800,a:"#fffaf0",b:"#fff",c:"#f4c2c2",d:'flower',tier:1,x:[],t:"Elegant tiers for 40+ guests."},
-{n:"Blush Berry Wedding Cake",img:"Blush Berry Wedding Cake.jpg.jpeg",cat:"Weddings",p:950,a:"#fde2e4",b:"#fff",c:"#d62839",d:'berry',tier:1,x:["Eggless"],t:"Blush sponge with fresh berries."},
-{n:"Chocolate Drip Cake",img:"Chocolate Drip Cake.jpg", cat:"Weddings",p:700,a:"#6f4e37",b:"#4a2c1a",c:"#3b1f10",d:'drip',x:["Gluten-free"],t:"Rich chocolate with a ganache drip."},
-{n:"Baby Shower Cake",img:"Baby Shower Cake.jpg.jpeg",cat:"Baby Showers",p:520,a:"#cfe8ff",b:"#fff",c:"#f4c2c2",d:'flower',x:["Eggless"],t:"Soft pastel design with a themed topper."},
-{n:"Pastel Baby Cake",img:"Pastel Baby Cake.jpg",cat:"Baby Showers",p:480,a:"#e7d6ff",b:"#fff",c:"#ffd6e8",d:'sprinkle',tier:1,x:[],t:"Two-tier pastel cake for baby showers."},
-{n:"Vanilla Cupcakes (6)",img:"Vanilla Cupcakes (6).jpg",cat:"Cupcakes",p:120,a:"#e63946",b:"#fff3f3",c:"#f4c2c2",x:["Eggless"],t:"Fluffy cupcakes with buttercream swirls."},
-{n:"Chocolate Cupcakes (6)",img:"Chocolate Cupcakes (6).jpg",cat:"Cupcakes",p:130,a:"#8d5524",b:"#5c3a21",c:"#ffd166",x:[],t:"Cocoa cupcakes with chocolate frosting."},
-{n:"Strawberry Cupcakes (6)",img:"Strawberry Cupcakes (6).jpg",cat:"Cupcakes",p:130,a:"#f7a8b8",b:"#ff8fab",c:"#c9184a",x:["Eggless"],t:"Strawberry cream on vanilla sponge."},
-{n:"Cupcake Tower (24)",img:"Cupcake Tower.jpg",k:'cup',cat:"Dessert Spreads",p:480,a:"#ffb3c6",b:"#fff",c:"#ffd6e8",x:["Eggless"],t:"Two dozen themed cupcakes on a stand."},
-{n:"Dessert Spread Platter",img:"Dessert Spread Platter.jpg",cat:"Dessert Spreads",p:900,a:"#e8c39e",b:"#fff3e0",c:"#d62839",d:'berry',x:[],t:"Minis, cupcakes and cookies for 20 guests."},
-{n:"Chocolate Brownies (6)",img:"Chocolate Brownies (6).jpg",cat:"Daily Treats",p:110,a:"#4a2c1a",b:"#6f4e37",c:"#3b1f10",d:'drip',x:["Gluten-free"],t:"Fudgy brownies with a crackly top."},
-{n:"Iced Sugar Cookies (6)",img:"Iced Sugar Cookies(6).jpg", cat:"Daily Treats",p:95,a:"#f4c2c2",b:"#fff",c:"#ffd166",d:'sprinkle',x:[],t:"Hand-decorated cookies in pastel colours."}
+{n:"Pinata Birthday Cake", img:"pinata-birthday-cake.jpg", cat:"Birthdays",p:520,a:"#fff3d6",b:"#fff",c:"#e63946",d:'sprinkle',x:["Eggless"],t:"Sprinkle sponge filled with sweets."},
+{n:"Rainbow Cake",img:"rainbow-cake.jpg",cat:"Birthdays",p:480,a:"#ef476f",b:"#ffd166",c:"#06d6a0",d:'sprinkle',x:[],t:"Colourful layers with vanilla cream."},
+{n:"Southern Red Velvet",img:"southern-red-velvet.jpg",cat:"Birthdays",p:420,a:"#a4161a",b:"#fff",c:"#c9184a",d:'berry',x:["Eggless"],t:"Red velvet layers with cream cheese frosting."},
+{n:"Custom Birthday Cake",img:"custom-birthday-cake.jpg",cat:"Birthdays",p:450,a:"#f4c2c2",b:"#fff5f5",c:"#c9184a",d:'berry',x:["Eggless","Gluten-free"],t:"Fully tailored design, 8–10 servings."},
+{n:"Mini Heart Cake",img:"mini-heart-cake.jpg", cat:"Birthdays",p:180,a:"#f7a8b8",b:"#fff",c:"#c9184a",d:'heart',x:[],t:"Vintage-piped heart, serves 2–4."},
+{n:"Floral Buttercream Cake",img:"floral-buttercream-cake.jpg",cat:"Weddings",p:650,a:"#fff6e5",b:"#fff",c:"#c9184a",d:'flower',x:["Eggless"],t:"Vanilla layers with piped flowers."},
+{n:"Two-Tier Wedding Cake",img:"two-tier-wedding-cake.jpg",cat:"Weddings",p:1800,a:"#fffaf0",b:"#fff",c:"#f4c2c2",d:'flower',tier:1,x:[],t:"Elegant tiers for 40+ guests."},
+{n:"Blush Berry Wedding Cake",img:"blush-berry-wedding-cake.jpg",cat:"Weddings",p:950,a:"#fde2e4",b:"#fff",c:"#d62839",d:'berry',tier:1,x:["Eggless"],t:"Blush sponge with fresh berries."},
+{n:"Chocolate Drip Cake",img:"chocolate-drip-cake.jpg", cat:"Weddings",p:700,a:"#6f4e37",b:"#4a2c1a",c:"#3b1f10",d:'drip',x:["Gluten-free"],t:"Rich chocolate with a ganache drip."},
+{n:"Baby Shower Cake",img:"baby-shower-cake.jpg",cat:"Baby Showers",p:520,a:"#cfe8ff",b:"#fff",c:"#f4c2c2",d:'flower',x:["Eggless"],t:"Soft pastel design with a themed topper."},
+{n:"Pastel Baby Cake",img:"pastel-baby-cake.jpg",cat:"Baby Showers",p:480,a:"#e7d6ff",b:"#fff",c:"#ffd6e8",d:'sprinkle',tier:1,x:[],t:"Two-tier pastel cake for baby showers."},
+{n:"Vanilla Cupcakes (6)",img:"vanilla-cupcakes-6.jpg",cat:"Cupcakes",p:120,a:"#e63946",b:"#fff3f3",c:"#f4c2c2",x:["Eggless"],t:"Fluffy cupcakes with buttercream swirls."},
+{n:"Chocolate Cupcakes (6)",img:"chocolate-cupcakes-6.jpg",cat:"Cupcakes",p:130,a:"#8d5524",b:"#5c3a21",c:"#ffd166",x:[],t:"Cocoa cupcakes with chocolate frosting."},
+{n:"Strawberry Cupcakes (6)",img:"strawberry-cupcakes-6.jpg",cat:"Cupcakes",p:130,a:"#f7a8b8",b:"#ff8fab",c:"#c9184a",x:["Eggless"],t:"Strawberry cream on vanilla sponge."},
+{n:"Cupcake Tower (24)",img:"cupcake-tower.jpg",k:'cup',cat:"Dessert Spreads",p:480,a:"#ffb3c6",b:"#fff",c:"#ffd6e8",x:["Eggless"],t:"Two dozen themed cupcakes on a stand."},
+{n:"Dessert Spread Platter",img:"dessert-spread-platter.jpg",cat:"Dessert Spreads",p:900,a:"#e8c39e",b:"#fff3e0",c:"#d62839",d:'berry',x:[],t:"Minis, cupcakes and cookies for 20 guests."},
+{n:"Chocolate Brownies (6)",img:"chocolate-brownies-6.jpg",cat:"Daily Treats",p:110,a:"#4a2c1a",b:"#6f4e37",c:"#3b1f10",d:'drip',x:["Gluten-free"],t:"Fudgy brownies with a crackly top."},
+{n:"Iced Sugar Cookies (6)",img:"iced-sugar-cookies-6.jpg", cat:"Daily Treats",p:95,a:"#f4c2c2",b:"#fff",c:"#ffd166",d:'sprinkle',x:[],t:"Hand-decorated cookies in pastel colours."}
 ].map(m=>({k:'cake',...m}));
 /* ====== GALLERY LIST (every menu item that has a real photo + extras) ====== */
 const Images=[
-{n:"Wedding Cake",cat:"Weddings",img:"Wedding Cake.jpg.jpeg",a:"#fffaf0",b:"#fff",c:"#f4c2c2",d:'flower',tier:1,k:'cake'},
-{n:"Pink Heart Cake",cat:"Birthdays",img:"Mini Heart Cake.jpeg",a:"#a4161a",b:"#fff",c:"#c9184a",d:'berry',k:'cake'},
-{n:"Fairyland Creation",cat:"Behind the Scenes",img:"store.jpeg",a:"#f4c2c2",b:"#fff",c:"#c9184a",d:'berry',k:'cake'},
-{n:"Wedding Cupcakes",cat:"Weddings",img:"Wedding Cupcakes.jpg",a:"#ffb3c6",b:"#fff",c:"#ffd6e8",k:'cup'},
-{n:"Traditional Wedding Cake",cat:"Weddings",img:"tradiwedding cake.jpeg",a:"#fffaf0",b:"#fff",c:"#f4c2c2",d:'flower',tier:1,k:'cake'},
-{n:"Dessert Table",cat:"Dessert Spreads",img:"everything in one place.jpeg",a:"#e8c39e",b:"#fff3e0",c:"#d62839",d:'berry',k:'cake'},
+{n:"Wedding Cake",cat:"Weddings",img:"wedding-cake.jpg",a:"#fffaf0",b:"#fff",c:"#f4c2c2",d:'flower',tier:1,k:'cake'},
+{n:"Pink Heart Cake",cat:"Birthdays",img:"mini-heart-cake.jpg",a:"#a4161a",b:"#fff",c:"#c9184a",d:'berry',k:'cake'},
+{n:"Fairyland Creation",cat:"Behind the Scenes",img:"store.jpg",a:"#f4c2c2",b:"#fff",c:"#c9184a",d:'berry',k:'cake'},
+{n:"Wedding Cupcakes",cat:"Weddings",img:"wedding-cupcakes.jpg",a:"#ffb3c6",b:"#fff",c:"#ffd6e8",k:'cup'},
+{n:"Traditional Wedding Cake",cat:"Weddings",img:"tradiwedding-cake.jpg",a:"#fffaf0",b:"#fff",c:"#f4c2c2",d:'flower',tier:1,k:'cake'},
+{n:"Dessert Table",cat:"Dessert Spreads",img:"everything-in-one-place.jpg",a:"#e8c39e",b:"#fff3e0",c:"#d62839",d:'berry',k:'cake'},
 {n:"Fresh From Our Kitchen",cat:"Behind the Scenes",img:"baking.jpg",a:"#ffb3c6",b:"#fff",c:"#ffd6e8",k:'cup'},
 ...menu.filter(m=>m.img).map(m=>({...m,p:undefined}))
 ].filter((o,i,arr)=>arr.findIndex(x=>x.img===o.img)===i);
@@ -86,7 +86,7 @@ $$('[data-img]').forEach(el=>el.style.backgroundImage=bg(PHOTOS[el.dataset.img]|
 $$('[data-pic]').forEach(el=>{el.innerHTML=pic({n:'Fairyland Cake Co. photo',cat:'Gallery',img:PHOTOS[el.dataset.pic],k:'cake',a:'#f4c2c2',b:'#fff',c:'#c9184a',d:'berry'})});
 
 /* ====== NAV + SCROLL EFFECTS ====== */
-$('#menuBtn')?.addEventListener('click',()=>$('#navMenu').classList.toggle('show'));
+$('#menuBtn')?.addEventListener('click',e=>{const o=$('#navMenu').classList.toggle('show');e.currentTarget.setAttribute('aria-expanded',o);});
 const toTop=document.createElement('button');
 toTop.id='toTop';toTop.textContent='↑';toTop.setAttribute('aria-label','Back to top');
 toTop.onclick=()=>scrollTo({top:0,behavior:'smooth'});
@@ -143,7 +143,7 @@ if(slider){
   {img:PHOTOS.hero,t:'Little Moments, Big Magic',p:'Custom cakes, cupcakes and dessert spreads made with love.'},
   {img:PHOTOS.slide2,t:'Cakes for Every Celebration',p:'Birthdays, weddings and baby showers, designed around you.'},
   {img:PHOTOS.slide3,t:'Baked Fresh, Made to Order',p:'Order online in minutes and get an instant estimate.'}];
- slider.innerHTML=slides.map((s,i)=>`<div class="slide ${i?'':'on'}" style="background-image:${bg(s.img)}"><div><h1>${s.t}</h1><p>${s.p}</p><a class="btn" href="enquiry.html">Start Your Order</a></div></div>`).join('')
+ slider.innerHTML=slides.map((s,i)=>`<div class="slide ${i?'':'on'}" style="background-image:${bg(s.img)}"><div><h2>${s.t}</h2><p>${s.p}</p><a class="btn" href="enquiry.html">Start Your Order</a></div></div>`).join('')
   +'<button class="sbtn" id="sPrev" aria-label="Previous slide">‹</button><button class="sbtn" id="sNext" aria-label="Next slide">›</button><div class="dots">'+slides.map((s,i)=>`<button data-i="${i}" class="${i?'':'on'}" aria-label="Slide ${i+1}"></button>`).join('')+'</div>';
  let cur=0,timer;
  const show=n=>{cur=(n+slides.length)%slides.length;$$('.slide').forEach((s,i)=>s.classList.toggle('on',i===cur));$$('.dots button').forEach((d,i)=>d.classList.toggle('on',i===cur))};
@@ -164,8 +164,15 @@ if(feat){
  const col=$('#collage');
  if(col){const c=photos.slice(0,6);col.innerHTML=c.map(card).join('');bindCards(c,'#collage')}
  const st=$('#steps');
- if(st)st.innerHTML=["1. Choose","Browse the menu and pick a cake, cupcakes or a dessert spread."],["2. Enquire","Fill in the order form and get an instant estimate and availability."],["3. Confirm","We contact you to confirm design, deposit and date."],[,"4. Celebrate","Collect at our pickup point or weekend market and enjoy!"]
-  .map(s=>`<div class="step reveal"><b>${s[0]}</b><h3>${s[1]}</h3><p>${s[2]}</p></div>`).join('');
+ if(st){
+  const steps=[
+   ['1. Choose','Browse the menu and pick a cake, cupcakes or a dessert spread.'],
+   ['2. Enquire','Fill in the order form and get an instant estimate and availability.'],
+   ['3. Confirm','We contact you to confirm design, deposit and date.'],
+   ['4. Celebrate','Collect at our pickup point or weekend market and enjoy!']];
+  st.innerHTML=steps.map(s=>`<div class="step reveal"><b>${esc(s[0])}</b><p>${esc(s[1])}</p></div>`).join('');
+  reveal();
+ }
 }
 
 /* ====== MENU: filter, search, sort, load more ====== */
@@ -288,3 +295,55 @@ $$('form[data-validate]').forEach(f => {
         }
     });
 });
+
+/* ====== ENQUIRY FORM: validate -> estimate + availability -> AJAX submit ====== */
+const SIZE_PRICE={Small:450,Medium:650,Large:900,Tiered:1800};
+const DIET_EXTRA={None:0,Eggless:50,'Gluten-free':120};
+const LEAD_DAYS={Small:3,Medium:7,Large:14,Tiered:28};
+function showResult(html,ok){
+ const r=$('#result');if(!r)return null;
+ r.innerHTML=html;r.style.display='block';r.style.borderColor=ok===false?'#b00020':'';
+ r.scrollIntoView({behavior:'smooth',block:'nearest'});return r;
+}
+const orderForm=$('#orderForm');
+if(orderForm){
+ orderForm.addEventListener('submit',async e=>{
+  e.preventDefault();
+  if(!validate(orderForm)){showResult('<p><strong>Please fix the highlighted fields</strong> and submit again.</p>',false);return;}
+  const f=orderForm,size=f.size.value,diet=f.diet.value;
+  const total=SIZE_PRICE[size]+(DIET_EXTRA[diet]||0);
+  const days=Math.ceil((new Date(f.date.value)-new Date().setHours(0,0,0,0))/864e5);
+  const need=LEAD_DAYS[size];
+  const avail=days>=need
+   ?'<strong style="color:#2e7d32">Good news - your date looks available.</strong> We will confirm within 24 hours.'
+   :'<strong style="color:#b26a00">Your date is a tight turnaround</strong> for this size (we normally need '+need+' days). We will contact you to see what is possible.';
+  const box=showResult(
+   '<h3>Thank you, '+esc(f.fullname.value.trim())+'!</h3>'+
+   '<p><strong>Estimated cost:</strong> from R'+total+' ('+esc(size)+' cake'+(DIET_EXTRA[diet]?', '+esc(diet)+' option included':'')+')</p>'+
+   '<p>'+avail+'</p><p id="sendStatus" aria-live="polite">Sending your enquiry...</p>');
+  const status=$('#sendStatus');
+  const url=f.getAttribute('action');
+  if(/YOUR_FORM_ID/.test(url)){status.textContent='Demo mode: add your Formspree form ID in enquiry.html to deliver this enquiry by email.';return;}
+  try{
+   const res=await fetch(url,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});
+   if(res.ok){status.textContent='Your enquiry has been sent. We will be in touch soon!';f.reset();}
+   else status.textContent='We could not send your enquiry just now. Please email hello@fairylandcakeco.co.za.';
+  }catch(err){status.textContent='Network problem - your estimate is above, but please email hello@fairylandcakeco.co.za to confirm.';}
+ });
+}
+
+/* ====== CONTACT FORM: validate -> compile email -> Send Email button ====== */
+const contactForm=$('#contactForm');
+if(contactForm){
+ const TO='hello@fairylandcakeco.co.za';
+ contactForm.addEventListener('submit',e=>{
+  e.preventDefault();
+  if(!validate(contactForm)){showResult('<p><strong>Please fix the highlighted fields</strong> and try again.</p>',false);return;}
+  const f=contactForm;
+  const subject='['+f.msgType.value+'] Message from '+f.fullname.value.trim();
+  const body='Name: '+f.fullname.value.trim()+'\nEmail: '+f.email.value.trim()+'\nPhone: '+f.phone.value.trim()+'\nMessage type: '+f.msgType.value+'\n\n'+f.message.value.trim();
+  const r=showResult('<h3>Your email is ready</h3><p><strong>To:</strong> '+TO+'<br><strong>Subject:</strong> <span id="mSub"></span></p><pre id="mBody" style="white-space:pre-wrap;font-family:inherit;background:var(--soft);padding:.8rem;border-radius:10px"></pre><a class="btn rose" id="mSend">Send Email</a>');
+  $('#mSub').textContent=subject;$('#mBody').textContent=body;
+  $('#mSend').href='mailto:'+TO+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+ });
+}

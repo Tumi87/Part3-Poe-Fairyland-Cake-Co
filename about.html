@@ -5,40 +5,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Us | Fairyland Cake Co.</title>
 <meta name="description" content="Fairyland Cake Co. began in 2021 as a boutique home kitchen. Read our story, mission, FAQs and customer reviews.">
+<meta name="keywords" content="about Fairyland Cake Co, artisan bakery story, home kitchen bakery, custom cakes FAQ, bakery reviews">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%23e8a46a%27/%3E%3C/svg%3E">
 </head>
 <body>
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-</head>
 
 <header class="site-header">
-  <a href="index.html" class="logo">
-    <span class="logo-circle"></span>
-    <span class="logo-text">Fairyland <em>Cake Co.</em></span>
-  </a>
-
-  <nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="menu.html">Menu</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="enquiry.html">Enquiry</a>
-    <a href="contact.html" class="active">Contact</a>
-  </nav>
-</header>
+    <a href="index.html" class="logo">
+      <span class="logo-circle" aria-hidden="true"></span>
+      <span class="logo-text">Fairyland <em>Cake Co.</em></span>
+    </a>
+    <button id="menuBtn" type="button" aria-label="Toggle menu" aria-controls="navMenu" aria-expanded="false">&#9776;</button>
+    <nav class="main-nav" id="navMenu" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active" aria-current="page">About Us</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="enquiry.html">Enquiry</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
 <section class="banner" data-img="about1"><h1>About Fairyland Cake Co.</h1></section>
 
 <main>
  <section class="about">
   <h2>Our Story</h2>
-  <img src="Images/store.jpeg" alt="cake">
+  <img src="images/store.jpg" alt="Fairyland Cake Co. display of handcrafted cakes" loading="lazy">
   <p>Founded in 2021 as a boutique home kitchen, Fairyland Cake Co. grew out of a passion for artisan baking: custom cakes, whimsical cupcakes and detailed dessert spreads for birthdays and events.</p>
-  <img src="Images/baking.jpg" alt="cake">
+  <img src="images/baking.jpg" alt="Baker decorating cupcakes in the Fairyland Cake Co. kitchen" loading="lazy">
  </section>
 
  <div class="stats">
@@ -54,9 +52,9 @@
   <button data-tab="t2">Vision</button>
   <button data-tab="t3">Who We Bake For</button>
  </div>
- <div class="tabp on" id="t1"><p>To craft high quality, handcrafted baked goods that add charm to special celebrations while building a reliable local brand identity that customers can trust for evry occasion.</p></div>
+ <div class="tabp on" id="t1"><p>To craft high quality, handcrafted baked goods that add charm to special celebrations while building a reliable local brand identity that customers can trust for every occasion.</p></div>
  <div class="tabp" id="t2"><p>To be the most loved local artisan bakery, with an easy online ordering experience.</p></div>
- <div class="tabp" id="t3"><p>Local event hosts, parents planning birthdays, couples preparing for their big day,and community members seeking artisan baked goods that feels personal.</p></div>
+ <div class="tabp" id="t3"><p>Local event hosts, parents planning birthdays, couples preparing for their big day, and community members seeking artisan baked goods that feel personal.</p></div>
 
  <h2 class="t">Frequently Asked Questions</h2>
  <button class="acc-btn">Do you do custom designs?</button>

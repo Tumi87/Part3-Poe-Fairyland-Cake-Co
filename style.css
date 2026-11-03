@@ -137,7 +137,7 @@ body {
 .slide{position:absolute;inset:0;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;opacity:0;transition:opacity 1.1s;padding:1rem}
 .slide.on{opacity:1;animation:kb 9s ease-out forwards}
 .slide>div{background:rgba(44,44,44,.45);backdrop-filter:blur(2px);padding:1.5rem 2.2rem;border-radius:16px;max-width:620px;border:1px solid rgba(255,253,208,.4)}
-.slide h1{font-size:2.7rem;line-height:1.15;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.slide h1,.slide h2{font-size:2.7rem;line-height:1.15;text-shadow:0 2px 8px rgba(0,0,0,.5)}
 .slide p{text-shadow:0 1px 5px rgba(0,0,0,.5)}
 .sbtn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,253,208,.85);font-size:1.4rem;cursor:pointer;color:var(--char)}
 #sPrev{left:12px}#sNext{right:12px}
@@ -265,10 +265,44 @@ footer{background:var(--char);color:var(--cream);margin-top:3rem;padding:2.2rem 
  .top nav.show{display:block}
  .top nav ul{flex-direction:column;gap:0;padding:.5rem 1rem}
  .top nav a{display:block;padding:.8rem 0}
- .banner h1{font-size:2.1rem}.slide h1{font-size:1.8rem}.slider{height:360px}
+ .banner h1{font-size:2.1rem}.slide h1,.slide h2{font-size:1.8rem}.slider{height:360px}
  .collage{grid-template-columns:repeat(2,1fr);grid-auto-rows:130px}
  .collage .item:nth-child(4){grid-column:span 1}
  #galleryGrid .item:nth-child(7n+1){grid-column:span 1}
  #galleryGrid .item:nth-child(7n+1) .pic{aspect-ratio:1}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- Added in Part 3 fixes ---------- */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.site-header{position:relative;flex-wrap:wrap;gap:10px}
+#menuBtn{display:none;background:none;border:2px solid #2b2b2b;border-radius:8px;font-size:1.5rem;line-height:1;padding:6px 12px;cursor:pointer;color:#2b2b2b;min-height:44px;min-width:44px}
+img{max-width:100%;height:auto}
+html{-webkit-text-size-adjust:100%}
+@media(max-width:900px){
+ .site-header{padding:12px 20px}
+ .main-nav{gap:20px}
+}
+@media(max-width:800px){
+ .logo-text{font-size:1.3rem}
+ #menuBtn{display:block}
+ .main-nav{display:none;position:absolute;top:100%;left:0;right:0;z-index:50;flex-direction:column;gap:0;background:#fffdf8;padding:.5rem 20px 1rem;box-shadow:0 8px 14px rgba(0,0,0,.15);border-top:1px solid #eee}
+ .main-nav.show{display:flex}
+ .main-nav a{padding:.9rem 0;border-bottom:1px solid #f0e8e8;min-height:44px}
+ body{font-size:16px}
+ h1{font-size:1.9rem}
+ h2{font-size:1.45rem}
+ form{padding:1rem;margin:0 .5rem}
+ .fcols{grid-template-columns:1fr 1fr}
+ .cols{grid-template-columns:1fr}
+ .map{height:240px}
+ .tools{flex-direction:column;align-items:stretch}
+}
+@media(max-width:480px){
+ .site-header{padding:10px 14px}
+ .logo-text{font-size:1.15rem}
+ .fcols{grid-template-columns:1fr}
+ .slider{height:300px}
+ .banner h1{font-size:1.7rem}
+ .grid{grid-template-columns:1fr 1fr;gap:.7rem}
+}

@@ -5,35 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact & Pickup | Fairyland Cake Co.</title>
 <meta name="description" content="Contact Fairyland Cake Co., find our pickup location and weekend market stall on the map, or message us on WhatsApp or email.">
+<meta name="keywords" content="contact bakery, cake pickup location, weekend market stall, WhatsApp cake orders">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%23e8a46a%27/%3E%3C/svg%3E">
 </head>
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-</head>
+<body>
 
 <header class="site-header">
-  <a href="index.html" class="logo">
-    <span class="logo-circle"></span>
-    <span class="logo-text">Fairyland <em>Cake Co.</em></span>
-  </a>
-
-  <nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="menu.html">Menu</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="enquiry.html">Enquiry</a>
-    <a href="contact.html" class="active">Contact</a>
-  </nav>
-</header>
-
-  <li><a class="active" href="contact.html">Contact</a></li>
- </ul></nav>
-</header>
+    <a href="index.html" class="logo">
+      <span class="logo-circle" aria-hidden="true"></span>
+      <span class="logo-text">Fairyland <em>Cake Co.</em></span>
+    </a>
+    <button id="menuBtn" type="button" aria-label="Toggle menu" aria-controls="navMenu" aria-expanded="false">&#9776;</button>
+    <nav class="main-nav" id="navMenu" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="enquiry.html">Enquiry</a>
+      <a href="contact.html" class="active" aria-current="page">Contact</a>
+    </nav>
+  </header>
 
 <section class="banner" data-img="hero"><h1>Contact Us</h1></section>
 
@@ -44,7 +39,7 @@
  <div><label for="phone">Phone</label><input id="phone" type="tel" name="phone" data-rule="phone" placeholder="0821234567" required pattern="(\+27|0)[0-9 ]{9,12}" maxlength="16"><span class="err"></span></div>
  <div><label for="msgType">Message Type</label><select id="msgType" name="msgType" data-rule="select" required><option value="">-- Select --</option><option>General Question</option><option>Feedback</option><option>Complaint</option><option>Compliment</option></select><span class="err"></span></div>
  <div><label for="message">Message</label><textarea id="message" name="message" rows="5" data-rule="message" required minlength="10" maxlength="500"></textarea><span class="err"></span></div>
- <button class="btn rose" type="submit">Prepare Email</button>
+ <button class="btn rose" type="submit">Compile Email</button>
 </form>
 <div class="result" id="result" aria-live="polite"></div>
 <p style="text-align:center"><a class="btn wa" href="https://wa.me/27000000000" target="_blank" rel="noopener">Chat on WhatsApp</a></p>
